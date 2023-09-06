@@ -155,6 +155,105 @@ Los usuarios de AWS pueden crear y administrar recursos en la plataforma de tres
 AWS ofrece un amplio conjunto de productos y servicios basados en la nube, entre otros, cómputo, almacenamiento, bases de datos, análisis, redes, dispositivos móviles, herramientas para desarrolladores, herramientas de administración, Internet de las cosas (IoT), seguridad y aplicaciones de empresas. Estos servicios ayudan a las organizaciones a avanzar con mayor rapidez, reducir los costos de TI y les permiten escalar cuando es necesario. AWS cuenta con la confianza de las empresas más grandes y emergentes para hacer posible una amplia variedad de cargas de trabajo, como aplicaciones web y móviles, desarrollo de juegos, procesamiento y almacenamiento de datos, almacenamiento, archivado y muchas otras.
 
 
+### Introduccion al diseño de soluciones
+
+![img](img/04.PNG)
+
+1. **Aplicaciones para empresas:** Crea servicios para cumplir requisitos unicos de seguridad conformidad, privacidad y gobernanza de las grandes organizaciones.
+1. **Almacenamiento**: Copias de seguridad, recuperacion de datos y archivar datos en petabytes.
+1. **Informatica sin servidor**: Crea y ejecuta aplicaciones y servicios sin servidores.
+1. **Cargas de trabajo de Windows**: Capacidad flexible y escalable para aplicaciones Microsoft facil de administrar y segura.
+1. **Contenedores**: Empaqueta e implementa aplicaciones ligeras y proporciona un entorno de Software uniforme y portatil para ejecutar aplicaciones y escalarlas en cualquier lugar.
+1. **Machine Learning**: Plataformas y servicios eficientes y gran compatibilidad con frameworks de referencia en cualquier lugar.
+1. **IoT**: Sistema de dispositivos amplios que conectan el mundo fisico con la nube.
+1. **Analisis y lagos de datos**: almacen, categoria y analisis de datos en repositorio central.
+
+***Grafico de solucion***
+![img](img/05.PNG)
+
+#### Gestión de los desafíos de los clientes
+![img](img/06.PNG)
+
+#### Estrategias de migración
+Las 7 R:
+
+1. Re alojar(Volver a alojar)
+1. Redefinir la plataforma
+1. Reubicar
+1. Refactorizar
+1. Retirar
+1. Retener
+1. Re comprar(Volver a comprar)
+
+Las 4 primeras migran cargas de trabajo a la nube. Las demas son otras opciones para abordar las arquitecturas en las instalaciones.
+![img](img/07.PNG)
+
+**Volver a alojar: Lift and shift**
+![img](img/09.PNG)
+
+**Reubicar: nivel hipervisor lift and shift**
+![img](img/10.PNG)
+
+**Redefinicion de plataforma: lift, tinker, and shift**
+![img](img/11.PNG)
+
+**Refactorizacion: Modernizacion**
+![img](img/12.PNG)
+
+**Otras estrategias:**
+![img](img/13.PNG)
+
+#### Prácticas recomendadas de arquitectura en la nube
+
+1. **Crear un diseño a prueba de fallas para no tener errores**:
+![img](img/15.PNG)
+1. **Incorporar seguridad en todas las capas**:
+![img](img/16.PNG)
+1. **Aprovechar las distintas opciones de almacenamiento**:
+![img](img/17.PNG)
+1. **Implementar elasticidad**:
+![img](img/18.PNG)
+1. **Piense en paralelo**:
+![img](img/19.PNG)
+1. **Libere Recursos a partir del acoplamiento debil**:
+![img](img/20.PNG)
+1. **No temas a las limitaciones**:
+![img](img/21.PNG)
+
+#### El Marco de Buena Arquitectura de AWS
+
+![img](img/22.PNG)
+![img](img/23.PNG)
+
+***Ejemplo de buena arquitectura: optimización de costos***
+![img](img/24.PNG)
+Una de las tantas diferencias entre un entorno en las instalaciones y AWS es que, en AWS, los clientes pagan solo por lo que utilizan. La optimización de costos también garantiza que los clientes solo paguen por lo que necesitan, al ejecutar la cantidad exacta de recursos necesarios para realizar sus negocios. AWS ha identificado cuatro prácticas recomendadas clave para la optimización de los costos:
+
+- **redimensionamiento de instancias**
+Redimensionar el tamaño de las instancias es el proceso de revisar los recursos implementados y buscar oportunidades para reducir el tamaño cuando sea posible. Por ejemplo, si una instancia de aplicación infrautiliza constantemente su RAM y CPU, cambiarla a una instancia más pequeña puede ofrecer ahorros significativos al tiempo que se mantiene el mismo rendimiento.
+
+- **Aumento de la elasticidad de las aplicaciones**
+Por ejemplo, el escalado automático ayuda a garantizar la disponibilidad de la cantidad correcta de instancias para gestionar la carga de trabajo de una aplicación. Escalado horizontal durante la alta demanda y reducción horizontal durante la baja demanda
+
+- **Elección del modelo de precios correcto**
+Por ejemplo, el uso de instancias reservadas para cargas de trabajo que necesitan ejecutarse la mayor parte del tiempo o todo el tiempo, como los entornos de producción. Puede tener un impacto significativo en los ahorros en comparación con las instancias bajo demanda, en algunos casos hasta en un 75 %.
+- **Optimización del almacenamiento**
+Por ejemplo, el almacenamiento de S3 Intelligent-Tiering está diseñado para optimizar los costos mediante la migración automática de los datos a la capa de almacenamiento más rentable.
+
+#### Marco de adopción de la nube de AWS (CAF de AWS)
+![img](img/25.PNG)
+![img](img/26.PNG)
+![img](img/27.PNG)
+![img](img/28.PNG)
+![img](img/29.PNG)
+![img](img/30.PNG)
+![img](img/31.PNG)
+![img](img/32.PNG)
+![img](img/33.PNG)
+
+#### Solucion propuesta
+![img](img/34.PNG)
+
 ## Dominio I: Conceptos de la nube de AWS
 
 ### On Premise
