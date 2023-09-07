@@ -252,12 +252,63 @@ Por ejemplo, el almacenamiento de S3 Intelligent-Tiering está diseñado para op
 ![img](img/33.PNG)
 
 #### Solucion propuesta
+
 ![img](img/34.PNG)
+
+### Presentacion de las soluciones de AWS a los clientes
+
+#### Fases clave
+
+![img](img/35.PNG)
+
+Las discusiones orientadas al cliente se dividen en tres categorías distintas, según los hitos típicos en el ciclo de ventas.
+
+1. ***La detección*** es la recopilación de información para ayudarlo a comprender los desafíos de su cliente.
+
+1. Una vez que recopila toda la información necesaria que identifique los objetivos y puntos débiles del cliente, se reunirá nuevamente con el cliente ***para presentar sus resultados y proponer una o más soluciones de AWS***. Esto puede dar como resultado varias reuniones, dependiendo de si se necesitan ajustes a la solución.
+
+1. Una vez que el cliente acepte una posible solución, le preguntará siquiere avanzar con una ***prueba de concepto (POC)***, en la que se evaluará la solución en su propio entorno.
+
+**Prácticas recomendadas de detección**
+![img](img/36.PNG)
+![img](img/37.PNG)
+
+#### Manejo de objeciones
+
+![img](img/38.PNG)
+![img](img/39.PNG)
+![img](img/40.PNG)
+![img](img/41.PNG)
+
+**Clave para obtener resultados uniformes**
+![img](img/42.PNG)
+![img](img/43.PNG)
+
+#### POC
+
+***Prueba de concepto se refiere a pruebas de la arquitectura a implementar en AWS en una version no productiva***
+
+**Aspectos Fundamentales**
+![img](img/44.PNG)
+
+**Creacion de una POC**
+![img](img/45.PNG)
+
+**Recursos para pruebas de concepto(POC)**
+![img](img/46.PNG)
+
+**Recursos para la POC**
+![img](img/47.PNG)
+![img](img/48.PNG)
+
+
 
 ## Dominio I: Conceptos de la nube de AWS
 
 ### On Premise
+
 Con mis propios recursos. Es decir hacer realizar el despliegue requerido con recursos propios. Por mencionar algunos de ellos:
+
 - Rentas o construccion de inmueble(data center)
 - Seguros
 - Luz, internet
@@ -266,9 +317,11 @@ Con mis propios recursos. Es decir hacer realizar el despliegue requerido con re
 - Equipo(Servidores, routers, cables, herramientas, monitores, computadores)
 
 ### Cloud
+
 Nube. Es decir solo se renta el servicio dependiendo de las necesidades de la aplicacion o despliegue. En caso de requerir mas servidores o requerimientos se renta lo antes mencionado.
 
 ### On Premise vs Cloud
+
 |**On Premise**                             |**Cloud**                                                                                                                                                                                                                   |
 |-------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |Costes Fijos de Harware                    |Pago por uso                                                                                                                                                                                                                |
