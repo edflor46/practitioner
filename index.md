@@ -1,7 +1,9 @@
 # AWS Conceptos Certificacion Practitioner
 
 # AWS Partner: Accreditation
-### Servicios de computo:
+
+### Servicios de computo
+
 Desarrollar, implementar, ejecutar y escalar cargas de trabajo en la nube de AWS.
 
 - **Amazon EC2**: Capacidad de computo de tamaño modificable
@@ -12,6 +14,7 @@ Desarrollar, implementar, ejecutar y escalar cargas de trabajo en la nube de AWS
 - **AWS Lambda**: Ejecutar codigo de respuesta a eventos
 
 #### Beneficios de Amazon EC2
+
 - Elasticidad
 - Control
 - Flexibilidad
@@ -22,6 +25,7 @@ Desarrollar, implementar, ejecutar y escalar cargas de trabajo en la nube de AWS
 - Sencillo
 
 #### Opciones de Amazon EC2: tipos de instancias
+
 Amplia seleccion de configuraciones de harware y software optimizadas para adaptarse a diferentes casos practicos.
 
 - **General Purpose:** Proporciona una combinacion equilibrada de recursos
@@ -30,13 +34,15 @@ Amplia seleccion de configuraciones de harware y software optimizadas para adapt
 - **Accelerated Computing**: usan aceleradores de hardware o procesadores de codigo para realizar funciones, como el calculo de numeros de coma flotante, el procesamiento de graficos, concordancia de patrones de datos, con una mayor eficacia comparado con un software que se ejecuta en un cpu.
 - **Storage Optimized**: sirven para las cargas de trabajo que requieren un acceso secuencial de lectura y escritura a los conjuntos de datos en el almacenamiento local. Estan optimizados para entregar decenas de miles de operaciones E/S aleatorias de baja latencia por segundo, o IOPS, a las aplicaciones
 
-#### Por que el escalado es importante:
+#### Por que el escalado es importante
+
 1. Ejecucion de nuevas instancias antes de los periodos de carga maxima.
 1. Uso de supervision para escalar horizontalmente mediante programacion
 1. Reduccion horizontal automatica
 1. Pago por los recursos necesarios cuando sea necesario
 
 #### EC2 AutoS caling
+
 - Ajusta automaticamente los recursos
 - Defina donde Amazon E2C Auto Scaling implementa los recursos
 - Especifique la Amazon VCP y las subredes
@@ -48,7 +54,9 @@ Capacidad Maxima: Hace que Amazon Auto Scaling escale horizontalmente el numero 
 Capacidad Deseada: Debe ser mayor o igual al limite minimo o inferior o igual al limite maximo.
 
 #### Elastic Loan Balancing
+
 Distribucion automatica del trafico entre varias instancias E2C.
+
 - Mayor disponibilidad y tolerancia a errores.
 - Configuracion de comprobacion de estados.
 - Reasignacion de cifrado y descifrado.
@@ -60,7 +68,8 @@ Admite 3 tipos de carga:
 1. **Gateway Load Balancer**: Dirige el trafico a los dispositivos virtuales que se encuentran en AWS Marketplace.
 
 **AMI**: Amazon Machine Images
-#### En resumen:
+
+#### En resumen
 
 **Instancias EC2** = bloques de creacion.
 Aplicar **AMI** para personalizar.
@@ -68,9 +77,11 @@ Configurar el escalado automatico y el equilibrio de carga.
 Pago por lo que utilizo.
 
 ### Introducción al almacenamiento AWS
+
 Esta sección se centra principalmente en Amazon Simple Storage Service (Amazon S3) y Amazon Elastic Block Store (Amazon EBS),
 
 #### Servicios de almacenamiento
+
 Un lugar fiable, escalable y seguro para los datos
 
 - **Amazon Elastic Block Store:** Almacenamiento persistente a nivel de bloque.
@@ -81,6 +92,7 @@ Un lugar fiable, escalable y seguro para los datos
 - **Amazon FSx**: Almacenamiento de archivos para sistemas de archivos muy utilizados.
 
 #### Clases de almacenamiento S3
+
 - Amazon S3 Standard.
 - Amazon S3 Standard - Acceso proco frecuente.
 - Amazon S3 One Zone - Acceso proco frecuente.
@@ -91,26 +103,31 @@ S3 Intelligent-Tiering mueve automaticamente los objetos entre niveles segun los
 Amazon Glacier: almacenamiento de copias de seguridad a largo plazo.
 
 ### Introducción a los servicios de base de datos de AWS
+
 - **Amazon Relational Database Service (RDS):** Capacidad rentable de tamaño modificable. Es un servicio de BD relacionales con 6 motores de BD populares
 - **Amazon DynamoDB**: Rendimiento rapido y predecible. Es una BD noSQL
 - **Amazon Elastic Cache**: Recuperacion de informacion rapida y administrada. Es un servicio de cache para implementar, usar y escalar cache en memoria en la nube.
 
-#### Ventajas de RDS:
+#### Ventajas de RDS
+
 1. Facil configuracion, administracion y mantenimiento.
 1. Reduccion de las cargas pesadas sin diferenciar.
 1. Alta disponibilidad con un boton de comando.
 1. Respaldo y recuperacion automatico.
 1. Escalar o reducir verticalmente en funcion del patron.
 
-#### Ventajas Bases de datos en EC2:
+#### Ventajas Bases de datos en EC2
+
 1. Mayor control y flexibilidad.
 1. Acceso al sistema operativo.
 1. Necesidades de funciones de una aplicacion especifica.
 
-#### En resumen:
+#### En resumen
+
 Su enfoque es reemplazar las tareas de administracion por procesos de valor agregado.
 
 ### Introducción a las redes
+
 Aislamiento de la infraestructura de la nube y escalado de capacidad de gestion de solicitudes.
 
 - **Amazon VPC(Virtual private cloud):** Crear una red virtual en la nube.
@@ -119,6 +136,7 @@ Aislamiento de la infraestructura de la nube y escalado de capacidad de gestion 
 - **Amazon Route 53**: Enrutar a los usuarios finales a aplicaciones de internet.
 
 ### Introducción a la seguridad en AWS
+
 En AWS, la segurida en la nube es la mayor prioridad.
 
 - Posibilidad de heredar los beneficios del centro de datos y la arquitectura de red AWS.
@@ -128,21 +146,25 @@ En AWS, la segurida en la nube es la mayor prioridad.
 
 AWS se creo con el fin de ayudar a crear una infraestrutura segura, de alto desempeño, resiliente y eficiente para aplicaciones.
 
-#### Servicios seguridad, identidad y conformidad.
+#### Servicios seguridad, identidad y conformidad
+
 - **Identity an Access Managment(IAM):** Administra identidades, recursos y permisos de forma segura a gran escala.
 - **Proteccion de infraestructura**: Inspecciona y filtra el trafico para evitar el acceso no autorizado en el host, la red y aplicacion.
 - **Conformidad**: Monitorea constantemente su entorno con verificaciones basadas en las mejores practicas recomendadas por AWS y los estandares del sector de la organizacion.
 
-#### Administracion segura del acceso a los recursos y servicios de AWS.
+#### Administracion segura del acceso a los recursos y servicios de AWS
+
 1. Control de acceso detallado de los recursos AWS.
 1. Autenticacion multifactor.
 1. Capacidad de analizar el acceso.
 1. Integracion de directorios corporativos.
 
 ### Resumen
+
 #### Interfaces de administración de AWS
+
 ![img](img/02.png)
-Los usuarios de AWS pueden crear y administrar recursos en la plataforma de tres formas. Las tres opciones se basan en una interfaz de programa de aplicación (API) común de REST que funciona como la base de AWS. 
+Los usuarios de AWS pueden crear y administrar recursos en la plataforma de tres formas. Las tres opciones se basan en una interfaz de programa de aplicación (API) común de REST que funciona como la base de AWS.
 
 **La consola de administración de AWS** proporciona una interfaz gráfica completa para la mayoría de las características que ofrece AWS. Facilita la administración en la nube para todos los aspectos de la cuenta de AWS del cliente, incluido el monitoreo del gasto mensual, la administración de credenciales de seguridad y la configuración de nuevos usuarios de IAM.
 
@@ -151,9 +173,9 @@ Los usuarios de AWS pueden crear y administrar recursos en la plataforma de tres
 **Los Kits de desarrollo de software (SDK)** de AWS son paquetes que brindan acceso a AWS en una variedad de lenguajes de programación populares. AWS administra la infraestructura como código mediante los SDK de AWS y las API que los subyacen. Estos SDK específicos del lenguaje contienen API que permiten a los clientes incorporar de forma fácil la amplia gama de servicios en la nube de AWS a su código sin tener que escribir las funciones ellos mismos.
 
 #### Variedad y penetración de los servicios de AWS
+
 ![img](img/03.png)
 AWS ofrece un amplio conjunto de productos y servicios basados en la nube, entre otros, cómputo, almacenamiento, bases de datos, análisis, redes, dispositivos móviles, herramientas para desarrolladores, herramientas de administración, Internet de las cosas (IoT), seguridad y aplicaciones de empresas. Estos servicios ayudan a las organizaciones a avanzar con mayor rapidez, reducir los costos de TI y les permiten escalar cuando es necesario. AWS cuenta con la confianza de las empresas más grandes y emergentes para hacer posible una amplia variedad de cargas de trabajo, como aplicaciones web y móviles, desarrollo de juegos, procesamiento y almacenamiento de datos, almacenamiento, archivado y muchas otras.
-
 
 ### Introduccion al diseño de soluciones
 
@@ -172,9 +194,11 @@ AWS ofrece un amplio conjunto de productos y servicios basados en la nube, entre
 ![img](img/05.PNG)
 
 #### Gestión de los desafíos de los clientes
+
 ![img](img/06.PNG)
 
 #### Estrategias de migración
+
 Las 7 R:
 
 1. Re alojar(Volver a alojar)
@@ -241,6 +265,7 @@ Por ejemplo, el uso de instancias reservadas para cargas de trabajo que necesita
 Por ejemplo, el almacenamiento de S3 Intelligent-Tiering está diseñado para optimizar los costos mediante la migración automática de los datos a la capa de almacenamiento más rentable.
 
 #### Marco de adopción de la nube de AWS (CAF de AWS)
+
 ![img](img/25.PNG)
 ![img](img/26.PNG)
 ![img](img/27.PNG)
@@ -301,8 +326,6 @@ Las discusiones orientadas al cliente se dividen en tres categorías distintas, 
 ![img](img/47.PNG)
 ![img](img/48.PNG)
 
-
-
 ## Dominio I: Conceptos de la nube de AWS
 
 ### On Premise
@@ -331,22 +354,25 @@ Nube. Es decir solo se renta el servicio dependiendo de las necesidades de la ap
 |Mantenimiento de centro de datos           |Externalizado                                                                                                                                                                                                               |
 |Problemas para despliegues mundiales       |Red global                                                                                                                                                                                                                  |
 
-
 ### Capex
+
 **Capital Expenditure**
 CapEx o Capital Expenditure se reﬁere a los gastos de capital o las inversiones que realiza una empresa al adquirir un activo.
 
 Por ejemplo:
+
 - **Infraestructura de TI**
 - **Equipamiento informático**
 - **Automóviles**
 
 **Características**:
+
 - **Inversión en infraestructura física, se pierde liquidez**
 - **Depreciación de la inversión en impuestos con el tiempo**
 - **Se conoce el monto y se puede presupuestar**
 
 ### Opex
+
 **Operational Expenditure**
 OpEx conocido como Operational Expenditure, se reﬁere a los gastos operativos que realiza una empresa para que sus productos, sistemas o negocio en sí, funcionen.
 
@@ -357,7 +383,6 @@ Por ejemplo:
 - **Costos de mantenimiento de oficinas**
 
 Cuando una empresa compra servicios, forman parte de OpEx, ya que no son parte de los activos, sino que se consumen por servicio, tal es el caso de los servicios en la nube, con la cual se suministran servicios bajo demanda y de forma flexible, como es IaaS, PaaS y SaaS.
-
 **Características**
 
 - **Gasto en productos/servicios que se facturan al consumir**
@@ -366,20 +391,24 @@ Cuando una empresa compra servicios, forman parte de OpEx, ya que no son parte d
 - **El proveedor es también responsable por la adopción**
 
 ### IaaS, PaaS, SaaS
+
 ![img](img/01.png)
 A considar que en estos tres servicios se nos presenta como una virtualizacion.
-Como conclusion: 
+Como conclusion:
+
 - ***programador*** opta por PaaS por el simple hecho que se cuenta con todo lo requerido para realizar el despliegue de una aplicacion.
 - ***Administrador de sistemas*** opta por IaaS debido a que solo requiere una infraestructura para generar un sistema con la complejidad requerida en especifico.
 
-
 #### IaaS
+
 Infraestructura como servicios (**Infraestructure as a Services**). Ellos se encargar de mantener, actualizar en optimas condiciones lo siguiente:
+
 - Harware
 - Redes
 - Almacenamiento
 
 Yo solo me haria cargo de lo siguiente:
+
 - Sistema Operativo
 - Entorno de Ejecucion
 - Datos
@@ -388,8 +417,10 @@ Yo solo me haria cargo de lo siguiente:
 En **IaaS** hay una clara separacion ya que solo se ofrece la infraestructura como servicio, es decir lo requerido para instalar y poner todo lo referente a software
 
 #### PaaS
+
 Plataformas como servicio(**Platform as a Services**), en este apartado ya se incluye una plataforma
 por ende el servicio nos incluiria lo siguiente:
+
 - Harware
 - Redes
 - Almacenamiento
@@ -397,13 +428,16 @@ por ende el servicio nos incluiria lo siguiente:
 - Entorno de Ejecucion
 
 Por lo que por mi cuenta corre:
+
 - Datos
 - Aplicacion
 
 En **PaaS** incluye ademas del harware una capa de software, es decir la base de este para poder instalar/especificar la manera en que manejare los datos y la apliacion.
 
 #### SaaS
+
 Software como servicios(**Software as a Services**) este servicio se incluye todo lo requerido para que este lo pueda utilizar, en ello se incluye lo siguiente:
+
 - Harware
 - Redes
 - Almacenamiento
@@ -413,6 +447,7 @@ Software como servicios(**Software as a Services**) este servicio se incluye tod
 - Aplicacion
 
 ### Modelos de nube
+
 Cuando decidimos utilizar la nube para implantar nuestro sistema, podemos elegir tres modelos:
 
 - **Nube privada:** Toda la infraestructura y los datos se guardan en recursos privados a los que nadie mas tiene acceso.
@@ -438,25 +473,34 @@ Los puntos anteriores fueron orientados a ***On Premise***. Ahora enfocando a un
 |Un error produce la caida de la infraestructura|Si falla uno, no se cae toda la infraestructura|
 |Dependencia total de un conjunto a otros       |Pequeños conjuntos independientes              |
 
-
 ### Elasticidad
+
 #### Escalado vertical
+
 Crecer en potencia, aumentar 4 cpu, 8gb de ram en sistemas virtualizados
+
 #### Escalado horizontal
+
 Disponer de varias maquinas con la misma potencia, pero tener una comunicacion con la cantidad de maquinas virtualizadas
 
 #### Scale in
+
 Reducir es decir si la demanda de carga va dismunyendo, se hace la reduccion de equipo, maquinas.Es importante porque se hace un pago por uso. Con esto se refiere en que si se piensa en un **Scale in** el pago sera menor debido a que se esta reduciendo el equipo, maquina.
 
 #### Scale out
+
 Aumentar, es decir si la demanda de carga esta aumentando se  hace un escalado para aumentar y poder solventar la demanda. Es importante porque se hace un pago por uso. Con esto se refiere en que si se piensa en un **Scale out** se debera pagar mas por el aumento de equipo, maquinas.
 
 ### Procesamiento paralelo
+
 Crear varias instancias que se puedan procesar a la vez y asi evitar que por decirlo asi la instancia 1 termine para poder procesar la instancia 2. Si no que cada una de esas instancias se trabajan en paralelo y se aprovecha la elasticidad horizontal o escalamiento horizontal
 
 ### AWS Well-Architected Framework(Marco de buena Arquitectura)
+
 Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto rendimiento, resistente y eficiente para una variedad de aplicaciones y cargas de trabajo. Este marco, creado en torno a seis pilares (excelencia operativa, seguridad, fiabilidad, eficiencia de rendimiento, optimización de costos y sostenibilidad), ofrece un enfoque coherente para que los clientes y los socios evalúen las arquitecturas e implementen diseños escalables.
+
 #### Principios generales de diseño
+
 - **Dejar de adivinar necesidades de capacidad:** escala hacia arriba, abajo automaticamente.
 
 - **Pruebas de sistemas a escala de produccion:** haga simulaciones reales, pero cortas.
@@ -472,6 +516,7 @@ Ayuda a los arquitectos de la nube a crear una infraestructura segura, de alto r
 AWS Well-Architected Framework describe los conceptos clave, los principios de diseño y las prácticas recomendadas de arquitectura para diseñar y ejecutar cargas de trabajo en la nube. Responda un conjunto de preguntas básicas para descubrir hasta qué punto su arquitectura está en consonancia con las prácticas recomendadas en la nube y obtenga orientación para mejorarla.
 
 Este marco de arquitectura tiene los siguientes pilares:
+
 1. ***Excelencia operativa:*** El pilar de la excelencia operativa se concentra en ejecutar y monitorear los sistemas y en mejorar constantemente los procesos y los procedimientos. Entre los temas clave se incluyen la automatización de cambios, la respuesta a eventos y la definición de estándares para administrar las operaciones diarias.
 </br>
 
@@ -487,14 +532,14 @@ Este marco de arquitectura tiene los siguientes pilares:
 1. ***Optimizacion de precios:*** El pilar de optimización de costos se centra en evitar gastos innecesarios. Entre los temas clave se incluyen la comprensión del tiempo dedicado y el control de la asignación de fondos, la selección de recursos para el tipo y la cantidad adecuados y el escalado para cumplir con las necesidades de la empresa sin gastos excesivos.
 </br>
 
-1. ***Sostenibilidad:*** El pilar de sostenibilidad se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube. Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y reducir los impactos posteriores. 
+1. ***Sostenibilidad:*** El pilar de sostenibilidad se centra en minimizar los impactos ambientales de ejecutar cargas de trabajo en la nube. Entre los temas clave se incluyen un modelo de responsabilidad compartida para la sostenibilidad, la comprensión del impacto y la maximización del uso para minimizar los recursos necesarios y reducir los impactos posteriores.
 
 [Mas informacion sobre los pilares](https://aws.amazon.com/es/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc&wa-guidance-whitepapers.sort-by=item.additionalFields.sortDate&wa-guidance-whitepapers.sort-order=desc)
-
 
 ## Dominio II: Seguridad y conformidad
 
 ### Responsibilidad compartida
+
 Los asuntos relacionados con la seguridad y la conformidad son una responsabilidad compartida entre AWS y el cliente. Este modelo compartido puede aliviar la carga operativa del cliente, ya que AWS opera, administra y controla los componentes del sistema operativo host y la capa de virtualización hasta la seguridad física de las instalaciones en las que funcionan los servicios. El cliente asume la responsabilidad y la administración del sistema operativo invitado (incluidas las actualizaciones y los parches de seguridad), de cualquier otro software de aplicaciones asociado y de la configuración del firewall del grupo de seguridad que ofrece AWS.
 
 #### AWS
@@ -506,6 +551,7 @@ Los asuntos relacionados con la seguridad y la conformidad son una responsabilid
 |Regiones|Zona de disponibilidad| Localicaciones|
 
 #### Customer
+
 |Responsabilidad del usuario              |
 |-----------------------------------------|
 |Datos del propio usuario                 |
@@ -520,36 +566,130 @@ En conclusion somos responsables de lo que ocurre en la nube, es decir cuando ha
 [Mas informacion](https://aws.amazon.com/es/compliance/shared-responsibility-model/)
 
 ### Conformidad y cumplimiento
+
 El programa de conformidad de AWS ayuda a nuestros clientes a comprender los controles estrictos que tenemos instaurados en AWS para mantener la seguridad y la conformidad de la nube. Mediante la combinación de características de servicio centradas en el control y la auditoría con los estándares aplicables de conformidad o auditoría, los habilitadores de conformidad de AWS crean programas tradicionales que ayudan a los clientes a establecerse y trabajar en un entorno de control de seguridad de AWS.
 
 Los estándares de TI con los que cumplimos están desglosados por certificaciones y acreditaciones; leyes, regulaciones y privacidad; y alineaciones y marcos. Un auditor independiente externo evalúa las certificaciones y acreditaciones de conformidad, lo cual tiene como resultado una certificación, un informe de auditoría o una acreditación de conformidad. Los clientes de AWS tienen la responsabilidad de cumplir las leyes y regulaciones de conformidad y programas de privacidad correspondientes. Las homologaciones y los marcos reguladores de conformidad incluyen requisitos de seguridad y conformidad publicados para una finalidad específica, como un sector o una función determinados.
 
 #### AWS Config
+
 - Audita las configuraciones de los recursos de AWS
 - Monitorea permanentemente las configuraciones
 - Evalua automaticamente las configuraciones registradas frente a las configuraciones deseadas.
 - Revisa los cambios de configuracion
 
 #### AWS Artifact
+
 - Es un recurso destinado a la informacion relacionada con la conformidad.
 - proporciona acceso a informes de seguridad y conformidad, asi como tambien a acuerdos en linea seleccionados.
-- Puede obtener acceso a descargas de ejemplo: 
-    - Certificaciones ISO de AWS
-    - Informes del sector de tarjetas de pago (PCI) y del control de organizaciones de servicios(SOC)
+- Puede obtener acceso a descargas de ejemplo:
+  - Certificaciones ISO de AWS
+  - Informes del sector de tarjetas de pago (PCI) y del control de organizaciones de servicios(SOC)
 
 ### Definicion de servicios
- - **CloudWatch**: Recopila datos operativos y de monitoreo en forma de registros, metricas y eventos, y permite su visualizacion mediante paneles automatizados para obtener una vista mas unificada de los recursos, las aplicaciones y los servicios de AWS que se ejecutan en AWS y en las instalaciones.
 
- - **AWS Cloud Trail**: Monitorea y registra la actividad de la cuenta en toda la infraestructura de AWS, lo que permite controlar las acciones de almacenamiento , analisis y reparacion. Controla todo lo que se hace desde la consola, CLI, SDK y API.     
+- **CloudWatch**: Recopila datos operativos y de monitoreo en forma de registros, metricas y eventos, y permite su visualizacion mediante paneles automatizados para obtener una vista mas unificada de los recursos, las aplicaciones y los servicios de AWS que se ejecutan en AWS y en las instalaciones.
+
+- **AWS Cloud Trail**: Monitorea y registra la actividad de la cuenta en toda la infraestructura de AWS, lo que permite controlar las acciones de almacenamiento , analisis y reparacion. Controla todo lo que se hace desde la consola, CLI, SDK y API.
+
+### Datos almacenados y en transito
+
+- Las claves de cifrado se gestionan con el servicio KMS(Key Management Service)
+
+- Se pueden cifrar los datos almacenados en cualquier servicio complatible con AWS KSM, como los siguientes:
+  - Amazon S3
+  - Amazon EBS
+  - Amazon Elastic File System(Amazon EFS)
+  - Bases de datos administradas de Amazon RDS
+
+- Para el cifrado de datos en transito se utiliza TLS(Transport Layer Security), anteriormente SSL.
+
+- AWS Certificate Manager ofrece una forma de administrar, implementar y renovar certificados TLS o SSL
+
+- Los servicios de AWS utilizan cifrado de datos en transito, tanto para la comunicacion con el cliente, como para el intercambio de informacion entre los propios servicios.
+*PD: El usuario debe activar el cifrado y que sea compatible con KMS*
+
+### IAM(Identity and Access Managment)
+
+IAM es un servicio global y gratuito que se utiliza para ***administrar el acceso a los recursos*** AWS.
+
+Define que recursos se puede obtener acceso, quien puede acceder, que puede hacer con el recurso y como se puede obtener acceso a los recursos.
+
+1. **Usuario de IAM:** Persona que se puede autentica con una cuenta AWS(Puede ser una persona o una aplicacion(SDK))
+1. **Grupo de IAM**: Conjunto de usuarios de IAM a los que se les concede la misma autorizacion.
+1. **Politica IAM:** Documento que define a que recursos se puede obtener acceso y el nivel de acceso a cada recurso.
+1. **Rol de IAM:** Mecanismo para conceder permisos temporales a solicitudes de servicios. Se puede conceder a cualquier entidad, usuarios o servicios AWS.
+
+### IAM modos de acceso
+
+Un usuario de IAM puede acceder de dos formas:
+
+1. ***Acceso mediante programacion.***
+    - Se autentica con un ID de clave de acceso y una clave de acceso secreta.
+    - Proporciona acceso a la CLI de AWS y al SDK de AWS.
+
+1. ***Acceso a la consola de administracion AWS.***
+    - Se autentica con un ID de cuenta o alias de 12 digitos. Nombre de usuario de IAM y contraseña de IAM.
+
+Si esta habilitada, Multi-Factor Authentication(MFA) solicita un codigo de autenticacion.
+
+### Grupos IAM
+
+1. Un usuario puede pertecener a varios grupos.
+1. No hay grupo predeterminado.
+1. Los grupos no pueden estar anidados.
+
+### Roles IAM
+
+1. Un rol de IAM es una identidad de IAM con permisos especificos.
+1. Es similar a un usuario de IAM.
+    - Asocia permisos de politicas a el.
+1. Es diferente a un usuario de IAM.
+    - No esta asociado de forma exclusiva a una persona o aplicacion.
+    - Esta diseñado para que lo pueda asumir una persona, una aplicacion o servicio.
+1. El rol proporciona credenciales de seguridad temporales.
+
+### Politicas IAM
+
+Se asignan permisos mediante la creacion de una politica de IAM. De forma predeterminada, todos los permisos estan denegados.
+
+Existen dos tipos de politicas: Basadas en identidad y basadas en recursos.
+***Denegacion implicita: si no se cuenta con un permiso explicito este se denegara, lo mas restrictivo es lo que siempre tendra efecto.***
+
+### Privilegio minimo
+
+Establece que se conceda unicamente los privilegios imprescindibles que necesita el usuario, en funcion de sus necesidades.
+
+### AWS Trusted Advisor
+
+Es una herramienta en linea que analiza su entorno AWS y proporciona orientacion y recomendaciones en tiempo real para ayudarlo a aprovisar sus recursos siguiendo las practicas recomendadas de AWS. El servicio Trusted Advisor se ofrece como parte del plan de AWS Support. Algunas de las caracteristicas de Trusted Avisor son gratuitas para todas las cuentas, pero los clientes Business Support y Enterprise Support tienen acceso al conjunto completo de comprobaciones y recomendadas de Trusted Advisor.
+
+### WAF - Web Application Firewall
+
+AWS WAF es un firewall para aplicaciones web que ayuda a proteger aplicaciones web contra ataques al permitirle configurar reglas que habilitan, bloquean o monitorizan las solicitudes web a partir de las condiciones de que usted defina. Las condiciones incluyen direcciones IP, encabezados HTTP, cadenas URI, Inyeccion de codigo SQL y scripting entre sitios.
+
+### Amazon Cognito
+
+Con Amazon Cognito, puede agregar funciones de registro e inicio de sesión para los usuarios y controlar el acceso a sus aplicaciones web y móviles. Amazon Cognito brinda un almacenamiento de identidades que es escalable a millones de usuarios, respalda la federación de identidades social y empresarial, y ofrece funciones de seguridad avanzada para proteger a sus clientes y a su empresa. Creado en base a las normas de identidad abierta, Amazon Cognito es compatible con múltiples regulaciones de conformidad y se integra con los recursos de desarrollo de frontend y backend.
+
+### AWS Shield
+
+AWS Shield es un servicio de protección contra ataques DDoS que protege las aplicaciones que se ejecutan en AWS.
+
+### AWS GuardDuty
+
+Proteja las cuentas de AWS con la detección de amenazas inteligente. Amazon GuardDuty es un servicio de detección de amenazas que supervisa de manera continua sus cargas de trabajo y cuentas de AWS para detectar actividades maliciosas y envía hallazgos detallados de seguridad para su visibilidad y corrección.
+
+### AWS Detective
+
+Amazon Detective es un servicio que facilita el triage, la investigación de incidentes y la cacería del atacante (Cyber Threat Hunting).
+
+### AWS Inspector
+
+Administración de vulnerabilidades automatizada y continua a escala. Amazon Inspector es un servicio de administración automatizada de vulnerabilidades que analiza continuamente las cargas de trabajo de AWS en busca de vulnerabilidades de software y exposición involuntaria a la red.
+
+### AWS Macie
+
+Detecte y proteja los datos confidenciales a escala. Amazon Macie es un servicio de privacidad y seguridad de datos que utiliza machine learning (ML) y correspondencia de patrones para detectar y proteger datos confidenciales.
 
 
-
-
-
-
-
-
-
-
-
-Lalo_2393
