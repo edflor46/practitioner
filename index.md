@@ -1,3 +1,4 @@
+
 # AWS Conceptos Certificacion Practitioner
 
 # AWS Partner: Accreditation
@@ -692,4 +693,97 @@ Administración de vulnerabilidades automatizada y continua a escala. Amazon Ins
 
 Detecte y proteja los datos confidenciales a escala. Amazon Macie es un servicio de privacidad y seguridad de datos que utiliza machine learning (ML) y correspondencia de patrones para detectar y proteger datos confidenciales.
 
+## Dominio III: Tecnologia
 
+### Conexiones publicas, VPN y AWS Direct Connet
+
+#### VPN
+
+Las soluciones de red privada virtual de AWS establecen conexiones seguras entre sus redes en las instalaciones, las oficinas remotas, los dispositivos cliente y la red global de AWS. AWS VPN se compone de dos servicios: AWS Site-to-Site VPN y AWS Client VPN. Juntos, ofrecen una solución de VPN en la nube de alta disponibilidad, administrada y elástica para proteger su tráfico de red.
+
+AWS Site-to-Site VPN crea túneles cifrados entre su red y sus instancias de Amazon Virtual Private Cloud o AWS Transit Gateway. Para administrar el acceso remoto, AWS Client VPN conecta sus usuarios a recursos de AWS o en las instalaciones mediante un cliente de software de VPN.
+
+#### AWS Direct Connet
+
+El servicio de nube AWS Direct Connect es la ruta más corta hacia sus recursos de AWS. Mientras está en tránsito, el tráfico de su red se mantiene en la red global de AWS y nunca tiene contacto con el Internet público. Esto reduce las probabilidades de encontrar cuellos de botella o aumentos de la latencia inesperados. Cuando cree una nueva conexión, podrá elegir una conexión alojada que proporcione un socio de entrega de AWS Direct Connect, o bien, podrá optar por una conexión dedicada de AWS e implementar en más de 100 ubicaciones de AWS Direct Connect en todo el mundo. Con AWS Direct Connect SiteLink, puede enviar datos entre ubicaciones de AWS Direct Connect para crear conexiones de red privadas entre las oficinas y los centros de datos en su red global.
+
+### Infraestructura global
+
+Regiones que contienen zonas de disponibilidad, los cuales contienen centro de datos.
+
+#### Region
+
+Tiene niveles plenos de redundancia y conectividad. Tiene dos o mas AZ(normalmente 3), podemos elegir en funcion de requisitos legales, cercania al usuario, servicios ofrecidos o precio.
+
+#### Zonas de disponibilidad(AZ)
+
+Esta compuesto por uno o mas centros de datos y estan geograficamente separados para aumentar la seguridad. Se interconectan mediante redes privadas de alta velocidad.
+
+#### Centro de datos
+
+Son totalmente seguros: tiene alimentacion, redes y conectividad redundantes. Suele contener entre 50,000 y 80,000 servidores fisicos.
+
+### CDN, caches y su distribucion mundial: AWS CloudFront
+
+#### CDN
+
+Content Delivery Network es un sistema de servidores de almacenamiento en cache distribuido a nivel mundial que acelera la entrega de contenido.
+
+#### Amazon Cloud Front
+
+Es un servicio rapido de CDN que entrega datos, videos, aplicaciones y  API de manera segura a traves de una infraestructura mundial con **latencia baja** y **velocidades de transferencias altas.**
+
+#### Ubicaciones de borde(edge locations)
+
+Red de centros de datos que CloudFlront utiliza para ofrecer contenido popular a los clientes con rapidez.
+
+#### Cache de borde regional
+
+Ubicacion de FrontCloud que almacena en cache contenido que no es lo suficientemente popular como para permanecer en una ubicacion de borde. Se encuentra entre el servidor de origen y la ubicacion de borde global.
+
+### Categorias de servicios en AWS
+
+#### Servicios principales
+
+- **Informatica**
+  - Amazon EC2
+  - Amazon Lambda
+  - Amazon Elastic Beanstalk
+  - Amazon EC2 Auto Scaling
+  - Amazon ECS
+  - Amazon EKS
+  - Amazon ECR
+  - AWS Fargate
+- **Base de datos**
+  - Amazon RDS
+  - Amazon Dynamo DB
+  - Amazon Redshift
+  - Amazon Aurora
+- **Almacenamiento**
+  - Amazon S3
+  - Amazon S3 Glacier
+  - Amazon EFS
+  - Amazon EBS
+- **Redes y entrega de contenido**
+  - Amazon VPC
+  - Amazon Route 53
+  - Amazon CloudFront
+  - Elastic Load Balancing
+- **Seguridad, identidad y  conformidad**
+- **Administracion y gobernanza**
+- **Administracion de costos AWS**
+
+### Elasctic Computer Cloud(EC2)
+
+Es una maquina virtual con los requerimientos que consideremos.
+***Consideraciones al lanzar una instancia EC2.***
+
+- AMI(**I**magen de **A**mazon **M**achine)
+- Tipo de instancia
+- Red
+- Rol de IAM(Permisos)
+- Datos de usuario
+- Opciones de almacenamiento
+- Etiquetas
+- Grupo de seguridad
+- Par de claves de cifrado(publica o privada)
