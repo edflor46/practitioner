@@ -1,4 +1,95 @@
+# AWS Cloud Practitioner Essentials
 
+## Precios Amazon EC2
+
+Con Amazon EC2, solo paga por el tiempo de cómputo que utiliza. Amazon EC2 ofrece diversas opciones de precios para distintos casos de uso. Por ejemplo, si su caso práctico puede soportar interrupciones, puede ahorrar con las instancias de spot. También puede ahorrar si se compromete de forma anticipada y reserva un nivel mínimo de uso con las instancias reservadas.
+
+### Bajo demanda
+
+Las instancias bajo demanda son ideales para cargas de trabajo irregulares a corto plazo que no se pueden interrumpir. No se aplican costos iniciales ni contratos mínimos. Las instancias se ejecutan de forma continua hasta que las detiene y solo paga por el tiempo de cómputo que utiliza.
+
+Los casos prácticos de muestra de instancias bajo demanda incluyen el desarrollo y la prueba de aplicaciones y la ejecución de aplicaciones que tienen patrones de uso impredecibles. Las instancias bajo demanda no se recomiendan para cargas de trabajo que duran un año o más porque dichas cargas pueden experimentar un mayor ahorro de costos mediante instancias reservadas.
+
+### Instancias Reservadas
+
+Las instancias reservadas son un descuento de facturación que se aplica al uso de instancias bajo demanda en su cuenta. Hay dos tipos de instancias reservadas disponibles:
+
+- las instancias reservadas Standard
+- las instancias reservadas convertibles
+
+Puede comprar las instancias reservadas Standard y las reservadas convertibles por un periodo de 1 año o de 3 años. Consigue mayores ahorros de costos con la opción de 3 años.
+
+#### Instancias reservadas Standard 
+
+Esta opción es buena si conoce el tipo de instancia de EC2 y el tamaño que necesita para las aplicaciones de estado estable y en qué región de AWS planea ejecutarlas. Las instancias reservadas necesitan que establezca las siguientes calificaciones:
+
+- **tipo de instancia y tamaño:** por ejemplo, m5.xlarge
+- **descripción de la plataforma (sistema operativo)**: por ejemplo, Windows Server de Microsoft o Red Hat Enterprise Linux
+- **tenencia**: tenencia predeterminada o tenencia dedicada
+Tiene la opción de especificar una zona de disponibilidad para las instancias reservadas de EC2. Si realiza esta especificación, obtendrá la reserva de capacidad de EC2. Esto asegura que las instancias de EC2 que desea estén disponibles cuando las necesite
+
+#### Instancia reservada convertible
+
+si debe ejecutar las instancias de EC2 en una zona de disponibilidad diferente o tipos de instancias diferentes, es posible que las instancias reservadas convertibles sean las indicadas para usted. Nota: Consigue un mejor descuento cuando necesita flexibilidad para ejecutar las instancias de EC2.
+
+Al final del periodo de una instancia reservada, puede continuar utilizando la instancia de EC2 sin interrupciones. Sin embargo, se le cobrará tarifas bajo demanda hasta que realice una de las siguientes acciones:
+
+- Termine la instancia.
+- Adquiera una nueva instancia reservada que coincida con los atributos de la instancia (familia y tamaño, región, plataforma y tenencia de la instancia).
+
+### Savings Plans de una instancia EC2
+
+AWS ofrece Savings Plans para algunos servicios de cómputo, incluido Amazon EC2. Los Savings Plans de las instancias de EC2 reducen los costos de las instancias de EC2 cuando se compromete a realizar gastos por hora a una familia de instancias y a una región por un periodo de 1 año o de 3 años. Este compromiso del periodo genera ahorros de hasta el 72 % comparado a las tarifas bajo demanda. Cualquier uso hasta el compromiso se cobra según la tarifa de Savings Plans con descuento (por ejemplo, 10 USD por hora). Cualquier uso más allá del compromiso se cobra en base a las tarifas bajo demanda regulares.
+
+Los Savings Plans de las instancias de EC2 son una buena opción si necesita flexibilidad en su uso de Amazon EC2 sobre la duración del periodo de compromiso. Tiene el beneficio de ahorrar en la ejecución de cualquier instancia de EC2 dentro de una familia de instancias de EC2 en una región elegida (por ejemplo, el uso de M5 en Virgina del Norte) sin importar la zona de disponibilidad, el tamaño, el sistema operativo o la tenencia de la instancia. Los ahorros con los Savings Plans de las instancias de EC2 son similares a los ahorros suministrados por las instancias reservadas Standard.
+
+Sin embargo, al contrario de las instancias reservadas, no debe especificar de antemano el tipo y el tamaño de la instancia de EC2 (por ejemplo m5.xlarge), el sistema operativo ni la tenencia para obtener un descuento. Además, no debe comprometerse a un número determinado de instancias de EC2 durante un periodo de 1 año o de 3 años. Asimismo, los Savings Plans de las instancias de EC2 no incluyen una opción de reserva de capacidad de EC2.
+
+Más adelante en este curso, analizará el explorador de costos de AWS, que puede utilizar para visualizar, entender y administrar los costos y el uso de AWS a través del tiempo. Si está considerando las opciones de Savings Plans, puede utilizar el explorador de costos de AWS para analizar el uso de Amazon EC2 durante los últimos 7, 30 o 60 días. El explorador de costos de AWS también proporciona recomendaciones personalizadas para los Savings Plans. Estas recomendaciones calculan cuánto podría ahorrar en los costos mensuales de Amazon EC2, en función del uso anterior de Amazon EC2 y del importe del compromiso por hora de un Savings Plan de 1 o 3 años.
+
+### Instancias Spot
+
+Las instancias de spot son ideales para las cargas de trabajo con tiempos de inicio y finalización flexibles, o que pueden resistir interrupciones. Las instancias de spot utilizan capacidad de cómputo de Amazon EC2 no utilizada y ofrecen ahorros con un descuento de hasta el 90 % de los precios bajo demanda.
+
+Imagine que tiene un trabajo de procesamiento en segundo plano que puede iniciarse y detenerse según sea necesario (como el trabajo de procesamiento de datos de una encuesta de clientes). La intención es iniciar y detener el trabajo de procesamiento sin afectar a las operaciones generales de su empresa. Si realiza una solicitud de spot y la capacidad de Amazon EC2 está disponible, se lanza la instancia tipo spot. Sin embargo, si realiza una solicitud de spot y la capacidad de Amazon EC2 no está disponible, la solicitud no se realizará correctamente hasta que la capacidad esté disponible. La capacidad no disponible puede retrasar el inicio del trabajo de procesamiento en segundo plano.
+
+Después de lanzar una instancia de spot, si la capacidad ya no está disponible o aumenta la demanda de instancias de spot, es posible que la instancia se interrumpa. Es posible que esto no suponga ningún problema para el trabajo de procesamiento en segundo plano. Sin embargo, en el ejemplo anterior de desarrollo y prueba de aplicaciones, lo más probable es que desee evitar interrupciones inesperadas. Por lo tanto, elija un tipo de instancia de EC2 diferente que sea ideal para esas tareas.
+
+### Servidores dedicados
+
+Los servidores dedicados son servidores físicos con capacidad de instancias de Amazon EC2 totalmente dedicados a su uso. 
+
+Puede utilizar las licencias de software por zócalo, por núcleo o por máquina virtual (VM) existentes para ayudar a mantener el cumplimiento de las licencias. Puede comprar reservas de hosts dedicados y hosts dedicados bajo demanda. De todas las opciones de Amazon EC2 cubiertas, los hosts dedicados son los de mayor costo.
+
+## Escalado de Amazon EC2
+
+### Escalabilidad
+
+La escalabilidad implica comenzar solo con los recursos que necesita y diseñar la arquitectura para responder automáticamente a la demanda cambiante mediante el escalado o la reducción horizontal. Como resultado, solo paga por los recursos que utiliza. No tiene que preocuparse por la falta de capacidad de cómputo para satisfacer las necesidades de sus clientes.
+
+Si quisiera que el proceso de escalado se realizara automáticamente, ¿qué servicio de AWS utilizaría? El servicio de AWS que proporciona esta funcionalidad para las instancias de Amazon EC2 es Amazon EC2 Auto Scaling.
+
+### Amazon EC2 AutoScaling
+
+Si ha intentado acceder a un sitio web que no se cargaba y que con frecuencia se agotaba el tiempo de espera, es posible que el sitio haya recibido más solicitudes de las que pudo gestionar. Esta situación es similar a esperar en una larga fila en una cafetería, cuando solo hay un barista presente para recibir pedidos de los clientes.
+
+![img](img/pract/02.png)
+
+**Ejemplo: Amazon EC2 Auto Scaling**
+En la nube, la potencia de cómputo es un recurso programático, por lo que puede adoptar un enfoque más flexible en el tema del escalado. Al añadir Amazon EC2 Auto Scaling a una aplicación, puede añadir nuevas instancias a la aplicación cuando sea necesario y cancelarlas cuando ya no las necesite.
+
+Imagine que se está preparando para iniciar una aplicación en instancias de Amazon EC2. Al configurar el tamaño del grupo de Auto Scaling, puede establecer el número mínimo de instancias de Amazon EC2 en una. Esto significa que, en todo momento, debe haber al menos una instancia de Amazon EC2 funcionando.
+
+![img](img/pract/03.png)
+
+A continuación, puede establecer la capacidad deseada en dos instancias de Amazon EC2, aunque su aplicación necesite un mínimo de una sola instancia de Amazon EC2 para funcionar.
+
+<code>
+Si no especifica el número deseado de instancias de Amazon EC2 en un grupo de Auto Scaling, la capacidad deseada se establece de forma predeterminada en la capacidad mínima.</code>
+
+La tercera configuración que puede establecer en un grupo de Auto Scaling es la capacidad máxima. Por ejemplo, puede configurar el grupo de Auto Scaling para que escale horizontalmente en respuesta al aumento de la demanda, pero solo hasta un máximo de cuatro instancias de Amazon EC2.
+
+Dado que Amazon EC2 Auto Scaling utiliza instancias de Amazon EC2, solo paga por las instancias que utiliza, cuando las utiliza. Ahora cuenta con una arquitectura rentable que proporciona la mejor experiencia al cliente y reduce los gastos.
 # AWS Conceptos Certificacion Practitioner
 
 # AWS Partner: Accreditation
