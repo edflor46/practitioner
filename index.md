@@ -90,6 +90,151 @@ Si no especifica el número deseado de instancias de Amazon EC2 en un grupo de A
 La tercera configuración que puede establecer en un grupo de Auto Scaling es la capacidad máxima. Por ejemplo, puede configurar el grupo de Auto Scaling para que escale horizontalmente en respuesta al aumento de la demanda, pero solo hasta un máximo de cuatro instancias de Amazon EC2.
 
 Dado que Amazon EC2 Auto Scaling utiliza instancias de Amazon EC2, solo paga por las instancias que utiliza, cuando las utiliza. Ahora cuenta con una arquitectura rentable que proporciona la mejor experiencia al cliente y reduce los gastos.
+
+### Elastic Load Balancing
+
+Elastic Load Balancing es el servicio de AWS que distribuye automáticamente el tráfico de aplicaciones entrantes entre varios recursos, como las instancias de Amazon EC2. 
+
+Un equilibrador de carga actúa como un único punto de contacto para todo el tráfico web que entra en el grupo de Auto Scaling. Esto significa que, al agregar o quitar instancias de Amazon EC2 en respuesta a la cantidad de tráfico entrante, estas solicitudes se dirigen primero al equilibrador de carga. A continuación, las solicitudes se distribuyen en varios recursos que se encargarán de gestionarlas. Por ejemplo, si tiene varias instancias de Amazon EC2, Elastic Load Balancing distribuye la carga de trabajo entre las distintas instancias para que ninguna instancia tenga que cargar la mayor parte. 
+
+Aunque Elastic Load Balancing y Amazon EC2 Auto Scaling son servicios independientes, trabajan juntos para ayudar a garantizar que las aplicaciones que se ejecutan en Amazon EC2 puedan proporcionar alto rendimiento y disponibilidad.
+
+![img](img/pract/04.PNG)
+![img](img/pract/05.PNG)
+
+#### Aplicaciones monolíticas y microservicios
+
+![img](img/pract/06.PNG)
+
+Para ayudar a mantener la disponibilidad de las aplicaciones cuando ocurre un error en un solo componente, puede diseñar la aplicación mediante un enfoque de microservicios.
+
+![img](img/pract/07.PNG)
+
+#### Amazon Simple Notification Service (Amazon SNS)
+
+Amazon Simple Notification Service (Amazon SNS) es un servicio de publicación o suscripción. Con los temas de Amazon SNS, un editor publica mensajes a los suscriptores. Esto es similar a la cafetería; el cajero proporciona pedidos de café al barista que hace las bebidas.
+
+En Amazon SNS, los suscriptores pueden ser servidores web, direcciones de correo electrónico, funciones de AWS Lambda u otras opciones.
+
+#### Amazon Simple Queue Service (Amazon SQS)
+
+Amazon Simple Queue Service (Amazon SQS) es un servicio de cola de mensajes.
+
+Con Amazon SQS, puede enviar, almacenar y recibir mensajes entre componentes de software, sin perder mensajes ni requerir la disponibilidad de otros servicios. En Amazon SQS, una aplicación envía mensajes a una cola. Un usuario o servicio toma un mensaje de la cola, lo procesa y luego, lo elimina de la cola.
+
+### Cómputo sin servidor
+
+Anteriormente en este módulo, aprendió sobre Amazon EC2, un servicio que le permite ejecutar servidores virtuales en la nube. Si tiene aplicaciones que desea ejecutar en Amazon EC2, debe hacer lo siguiente:
+
+- Aprovisionar instancias (servidores virtuales).
+- Subir su código.
+- Seguir administrando las instancias mientras se ejecuta la aplicación.
+
+![img](img/pract/08)
+
+### AWS Lambda
+
+AWS Lambda(opens in a new tab) es un servicio que permite ejecutar código sin tener que aprovisionar ni administrar servidores.
+
+Cuando utiliza AWS Lambda, solo paga por el tiempo de cómputo que consume. Los cargos se aplican solo cuando el código se está ejecutando. También puede ejecutar código para prácticamente cualquier tipo de aplicación o servicio backend, todo sin ninguna administración.
+
+Por ejemplo, una función de Lambda sencilla podría implicar cambiar automáticamente el tamaño de las imágenes cargadas en la nube de AWS. En este caso, la función se activa cuando se carga una nueva imagen.
+
+![img](img/pract/09.PNG)
+
+### Contenedores
+
+Los contenedores le proporcionan un modo estándar de empaquetar el código y las dependencias de la aplicación en un único objeto. También puede utilizar contenedores para procesos y flujos de trabajo en los que existen requisitos esenciales de seguridad, fiabilidad y escalabilidad.
+
+### Amazon Elastic Container Service (Amazon ECS)
+
+Amazon Elastic Container Service (Amazon ECS)(opens in a new tab) es un sistema de administración de contenedores altamente escalable y de alto rendimiento que le permite ejecutar y escalar aplicaciones en contenedores en AWS. 
+
+Amazon ECS admite los contenedores de Docker. Docker(opens in a new tab) es una plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente. AWS es compatible con el uso de Docker Community Edition de código abierto y Docker Enterprise Edition de suscripción. Con Amazon ECS, puede utilizar las llamadas API para iniciar y detener aplicaciones habilitadas para Docker.
+
+### Amazon Elastic Kubernetes Service (Amazon EKS)
+
+Amazon Elastic Kubernetes Service (Amazon EKS)(opens in a new tab) es un servicio completamente administrado que puede utilizar para ejecutar Kubernetes en AWS. 
+
+Kubernetes(opens in a new tab) es un software de código abierto que le permite implementar y administrar aplicaciones en contenedores a escala. Una gran comunidad de voluntarios mantiene Kubernetes y AWS colabora activamente con la comunidad de Kubernetes. A medida que se publiquen nuevas características y funcionalidades para las aplicaciones de Kubernetes, podrá aplicar fácilmente estas actualizaciones a sus aplicaciones administradas por Amazon EKS.
+
+### AWS Fargate
+
+AWS Fargate(opens in a new tab) es un motor de cómputo sin servidor para contenedores. Funciona tanto con Amazon ECS como con Amazon EKS.
+
+Cuando utiliza AWS Fargate, no tiene que aprovisionar ni administrar servidores. AWS Fargate administra la infraestructura de servidores por usted. Puede centrarse más en innovar y desarrollar aplicaciones y pagar solo por los recursos necesarios para ejecutar sus contenedores.
+
+## Modulo 3: Infraestructura y fiabilidad global.
+
+### Infraestructura global de AWS
+
+Al determinar la región adecuada para los servicios, los datos y las aplicaciones, tenga en cuenta los siguientes cuatro factores empresariales. 
+
+Para más información sobre las regiones, despliegue cada una de estas cuatro categorías.
+
+- Cumplimiento con los requisitos legales y de gobernanza de datos.
+- Proximidad a sus clientes.
+- Servicios disponibles dentro de una region.
+- Precios.
+
+#### Regiones
+
+Una región es una ubicación geográfica independiente con varias ubicaciones aisladas entre sí.
+
+#### Zonas de disponibilidad
+
+Una zona de disponibilidad es un centro de datos único o un grupo de centros de datos dentro de una región. Las zonas de disponibilidad están ubicadas a decenas de kilómetros de distancia entre sí. Esto es lo suficientemente cercano para tener una latencia baja (el tiempo que transcurre entre el momento en que se solicita y se recibe el contenido) entre las zonas de disponibilidad. Sin embargo, si algún desastre ocurre en una parte de la región, están lo suficientemente separadas para reducir la posibilidad de que varias zonas de disponibilidad se vean afectadas.
+
+![img](img/pract/10.PNG)
+
+***Por ejemplo***
+![img](img/pract/11.PNG)
+![img](img/pract/12.PNG)
+![img](img/pract/13.PNG)
+
+#### Edge Locations
+
+Una ubicación perimetral es un sitio que Amazon CloudFront utiliza para almacenar copias almacenadas en caché del contenido más cerca de los clientes para una entrega más rápida.
+
+### AWS Outposts
+
+AWS Outposts es un servicio que le permite ejecutar la infraestructura con un enfoque de nube híbrida.
+
+### Formas de interactuar con los servicios de AWS
+
+#### Consola de administracion AWS
+
+La consola de administración de AWS es una interfaz basada en la web que permite acceder y administrar los servicios de AWS. Puede acceder de manera rápida a los servicios utilizados recientemente y buscar otros servicios por nombre, palabra clave o acrónimo. La consola incluye asistentes y flujos de trabajo automatizados que pueden simplificar el proceso de realización de tareas.
+
+También puede utilizar la aplicación móvil de la consola de AWS para realizar tareas como supervisar recursos, ver alarmas y acceder a la información de facturación. Varias identidades pueden permanecer registradas en la aplicación móvil de la consola de AWS al mismo tiempo.
+
+#### AWS Command Line Interface(AWS CLI)
+
+Para ahorrar tiempo al momento de realizar solicitudes de API, puede utilizar la AWS Command Line Interface (AWS CLI). La AWS CLI le permite controlar varios servicios de AWS directamente desde la línea de comandos de una herramienta. La AWS CLI está disponible para usuarios de Windows, macOS y Linux.
+
+Con AWS CLI, puede usar scripts para automatizar las acciones que sus servicios y aplicaciones llevan a cabo. Por ejemplo, puede utilizar comandos para lanzar una instancia de Amazon EC2, conectar una instancia de Amazon EC2 a un grupo específico de Auto Scaling y mucho más.
+
+#### AWS Kits de Desarrollo de Software(SDK)
+
+Otra opción para acceder y administrar los servicios de AWS son los kits de desarrollo de software (SDK). Los SDK facilitan el uso de los servicios de AWS a través de una API diseñada para su plataforma o lenguaje de programación. Los SDK le permiten utilizar los servicios de AWS con sus aplicaciones existentes o crear aplicaciones completamente nuevas que funcionarán en AWS.
+
+Para ayudarle a empezar a utilizar los SDK, AWS suministra documentación y un código de muestra para cada lenguaje de programación compatible. Los lenguajes de programación compatibles incluyen C++, Java, .NET y más.
+
+### AWS Elastic Beanstalk
+
+Con AWS Elastic Beanstalk, usted suministra opciones de código y configuración, y Elastic Beanstalk implementa los recursos necesarios para realizar las siguientes tareas:
+
+1. Ajuste de capacidad
+1. balanceo de carga
+1. Escalado automático
+1. Supervisión del estado de las aplicaciones
+
+### AWS CloudFormation
+
+Con AWS CloudFormation, puede tratar su infraestructura como código. Esto significa que puede crear un entorno y escribir líneas de código en lugar de utilizar la consola de administración de AWS para aprovisionar recursos individualmente.
+
+AWS CloudFormation proporciona recursos de forma segura y repetible, lo que le permite crear con frecuencia la infraestructura y aplicaciones sin tener que realizar acciones manuales. Determina las operaciones correctas que se deben realizar al momento de administrar la pila y revierte los cambios automáticamente si detecta errores.
+
 # AWS Conceptos Certificacion Practitioner
 
 # AWS Partner: Accreditation
