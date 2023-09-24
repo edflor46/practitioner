@@ -235,6 +235,136 @@ Con AWS CloudFormation, puede tratar su infraestructura como código. Esto signi
 
 AWS CloudFormation proporciona recursos de forma segura y repetible, lo que le permite crear con frecuencia la infraestructura y aplicaciones sin tener que realizar acciones manuales. Determina las operaciones correctas que se deben realizar al momento de administrar la pila y revierte los cambios automáticamente si detecta errores.
 
+## Modulo 4: Redes
+
+### Amazon Virtual Private Cloud (Amazon VPC)
+
+Imagine los millones de clientes que utilizan los servicios de AWS. Además, imagine los millones de recursos que han creado estos clientes, como las instancias de Amazon EC2. Sin límites en torno a todos estos recursos, el tráfico de red podría fluir entre ellos sin restricciones.
+
+Un servicio de red que puede utilizar para establecer límites en torno a sus recursos de AWS es Amazon Virtual Private Cloud (Amazon VPC).
+
+Amazon VPC le permite aprovisionar una sección aislada de AWS Cloud. En esta sección aislada, puede lanzar recursos en una red virtual que defina. Dentro de una Virtual Private Cloud (VPC), puede organizar los recursos en subredes. Una subred es una sección de una VPC que puede contener recursos, como instancias de Amazon EC2.
+
+#### Gateway
+
+![img](img/pract/14.PNG)
+
+Una puerta de enlace de Internet es una conexión entre una VPC e Internet. Puede considerar que una puerta de enlace de Internet es similar a una puerta que los clientes utilizan para entrar en la cafetería. Sin una puerta de enlace de Internet, nadie puede acceder a los recursos de la VPC.
+
+Para permitir que el tráfico público de internet acceda a su VPC, adjunte una puerta de enlace de internet a la VPC.
+
+#### Private Gateway
+
+Para acceder a los recursos privados en una VPC, puede utilizar una puerta de enlace privada virtual.
+
+![img](img/pract/15.PNG)
+
+Una puerta de enlace privada virtual le permite establecer una conexión de red privada virtual (VPN) entre la VPC y una red privada, como un centro de datos en las instalaciones o una red corporativa interna. Una puerta de enlace privada virtual permite el tráfico hacia la VPC solo si procede de una red aprobada.
+
+### AWS Direct Connect
+
+AWS Direct Connect(opens in a new tab) es un servicio que le permite establecer una conexión privada dedicada entre su centro de datos y una VPC.
+
+![img](img/pract/16.PNG)
+
+La conexión privada que proporciona AWS Direct Connect le ayuda a reducir los costos de red y a aumentar la cantidad de ancho de banda que puede viajar a través de la red.
+
+### Listas de control de acceso a redes y subredes
+
+#### Subredes
+
+Una subred es una sección de una VPC en la que se pueden agrupar recursos en función de las necesidades operativas o de seguridad. Las subredes pueden ser públicas o privadas.
+
+- **Subredes publicas:** Las subredes públicas contienen recursos a los que el público debe tener acceso, como el sitio web de una tienda en línea.
+
+- **Subredes privadas**: Las subredes privadas contienen recursos a los que solo se debe tener acceso a través de la red privada, como una base de datos que contiene la información personal de los clientes y los historiales de pedidos.
+
+![img](img/pract/17.PNG)
+
+En una VPC, las subredes se pueden comunicar entre sí. Por ejemplo, podría tener una aplicación que incluya instancias de Amazon EC2 de una subred pública que se comuniquen con bases de datos ubicadas en una subred privada.
+
+#### Tráfico de red en una VPC
+
+Cuando un cliente solicita datos de una aplicación alojada en la nube de AWS, la solicitud se envía como un paquete. Un paquete es una unidad de datos enviada a través de internet o de una red.
+
+Entra en una VPC a través de una puerta de enlace de internet. Antes de que un paquete pueda entrar o salir de una subred, comprueba los permisos. Estos permisos indican quién envió el paquete y cómo intenta comunicarse con los recursos de una subred.
+
+El componente de VPC que comprueba los permisos de paquetes para las subredes es una **lista de control de acceso (ACL) a la red**
+
+#### ACL de red
+
+Una ACL de red es un firewall virtual que controla el tráfico entrante y saliente a nivel de la subred.
+
+![img](img/pract/18.PNG)
+
+Cada cuenta de AWS incluye una ACL de red predeterminada. Al configurar la VPC, puede usar la ACL de red predeterminada de su cuenta o crear ACL de red personalizadas. 
+
+De forma predeterminada, la ACL de red predeterminada de su cuenta permite todo el tráfico entrante y saliente, pero usted puede modificarla y agregar sus propias reglas. En el caso de las ACL de red personalizadas, se deniega todo el tráfico entrante y saliente hasta que agregue reglas para especificar qué tráfico permitir. Además, todas las ACL de red tienen una regla de denegación explícita. Esta regla garantiza que si un paquete no coincide con ninguna de las demás reglas de la lista, el paquete se deniega.
+
+#### Filtrado de paquetes sin estado
+
+Las ACL de red realizan el filtrado de paquetes sin estado. No recuerdan nada y comprueban los paquetes que cruzan el borde de la subred en cada sentido: entrante y saliente.
+
+Cuando una respuesta de paquete para esa solicitud vuelve a la subred, la ACL de red no recuerda la solicitud anterior. La ACL de red comprueba la respuesta del paquete con la lista de reglas para determinar si se permite o se deniega.
+
+![img](img/pract/18.PNG)
+
+Una vez que un paquete entró en una subred, se deben evaluar sus permisos para los recursos de la subred, como las instancias de Amazon EC2. 
+
+El componente de VPC que corrobora los permisos de los paquetes para una instancia de Amazon EC2 es un grupo de seguridad.
+
+### Grupos de seguridad
+
+Un grupo de seguridad es un firewall virtual que controla el tráfico entrante y saliente de una instancia de Amazon EC2.
+
+De forma predeterminada, un grupo de seguridad deniega todo el tráfico entrante y permite todo el tráfico saliente. Puede añadir reglas personalizadas para configurar qué tráfico debe permitirse; cualquier otro tipo de tráfico será denegado
+
+#### Filtrado de paquetes con estado
+
+Los grupos de seguridad realizan el filtrado de paquetes con estado. Recuerdan las decisiones anteriores que se tomaron para los paquetes entrantes.
+
+![img](img/pract/20.PNG)
+
+Cuando una respuesta de paquete para esa solicitud vuelve a la instancia, el grupo de seguridad recuerda la solicitud anterior. El grupo de seguridad permite que la respuesta continúe, independientemente de las reglas del grupo de seguridad de entrada.
+
+Tanto con las ACL de red como con los grupos de seguridad, puede configurar reglas personalizadas para el tráfico de la VPC. A medida que siga aprendiendo más sobre la seguridad y las redes de AWS, asegúrese de comprender las diferencias entre las ACL de red y los grupos de seguridad.
+
+![img](img/pract/21.PNG)
+
+### Red global
+
+#### Sistema de nombres de dominio (DNS)
+
+Supongamos que AnyCompany tiene un sitio web alojado en la nube de AWS. Los clientes introducen la dirección web en su navegador y acceden al sitio web. Esto ocurre debido a la resolución del sistema de nombres de dominio (DNS). La resolución de DNS implica un solucionador de DNS del cliente que se comunica con un servidor DNS de la empresa.
+
+Puede considerar el DNS como la guía telefónica de internet. La resolución de DNS es el proceso de traducir el nombre de dominio a una dirección IP.
+
+![img](img/pract/22.PNG)
+
+#### Amazon Route 53
+
+Amazon Route 53(opens in a new tab) es un servicio web de DNS. Ofrece a los desarrolladores y a las empresas una forma fiable de dirigir a los usuarios finales a aplicaciones de Internet alojadas en AWS.
+
+Amazon Route 53 conecta las solicitudes de los usuarios a la infraestructura que funciona en AWS (como las instancias de Amazon EC2 y los equilibradores de carga). Puede dirigir a los usuarios a una infraestructura fuera de AWS.
+
+Otra característica de Route 53 es la capacidad de administrar los registros de DNS de los nombres de dominio. Puede registrar nuevos nombres de dominio directamente en Route 53. También puede transferir registros de DNS de nombres de dominio existentes administrados por otros registradores de dominios. Esto le permite administrar todos los nombres de dominio en una única ubicación.
+
+En el módulo anterior, aprendió sobre Amazon CloudFront, un servicio de entrega de contenido. En el siguiente ejemplo se describe cómo Route 53 y Amazon CloudFront trabajan conjuntamente para entregar contenido a los clientes.
+
+#### Ejemplo: cómo Amazon Route 53 y Amazon CloudFront entregan contenido
+
+![img](img/pract/23.PNG)
+
+Supongamos que la aplicación de AnyCompany funciona en varias instancias de Amazon EC2. Estas instancias se encuentran en un grupo de Auto Scaling que se adjunta a un equilibrador de carga de aplicaciones.
+
+1. Un cliente solicita datos de la aplicación si accede al sitio web de AnyCompany. 
+
+2. Amazon Route 53 utiliza la resolución de DNS para identificar la dirección IP correspondiente de AnyCompany.com, 192.0.2.0. Esta información se devuelve al cliente. 
+
+3. La solicitud del cliente se envía a la ubicación perimetral más cercana a través de Amazon CloudFront. 
+
+4. Amazon CloudFront se conecta al Application Load Balancer, que envía el paquete entrante a una instancia de Amazon EC2.
+
 # AWS Conceptos Certificacion Practitioner
 
 # AWS Partner: Accreditation
